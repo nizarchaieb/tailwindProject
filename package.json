@@ -1,0 +1,13 @@
+{
+  "name": "restoflow-university-restaurant",
+  "version": "1.0.0",
+  "description": "Restaurant Universitaire esprit - Tailwind CSS Project",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/style.css --minify",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
+
