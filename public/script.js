@@ -108,11 +108,11 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Fonction pour télécharger le badge en PDF
+// Fonction pour télécharger uniquement le QR code en PDF
 function downloadBadgePDF(event) {
-    const badgeCard = document.querySelector('.bg-white.rounded-lg.shadow-lg');
-    if (!badgeCard) {
-        alert('Erreur : Badge introuvable');
+    const qrCodeContainer = document.getElementById('qrCodeContainer');
+    if (!qrCodeContainer) {
+        alert('Erreur : QR Code introuvable');
         return;
     }
     
@@ -124,85 +124,48 @@ function downloadBadgePDF(event) {
     
     // Utiliser html2canvas et jsPDF pour créer le PDF
     if (typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
-        // Fallback : créer un PDF simple avec les données du badge
-        createSimplePDF();
+        alert('Erreur : Bibliothèques de génération PDF non disponibles');
         button.innerHTML = originalText;
         button.disabled = false;
         return;
     }
     
-    html2canvas(badgeCard, {
-        scale: 2,
+    html2canvas(qrCodeContainer, {
+        scale: 3,
         useCORS: true,
         backgroundColor: '#ffffff',
-        logging: false
+        logging: false,
+        width: qrCodeContainer.offsetWidth,
+        height: qrCodeContainer.offsetHeight
     }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF('p', 'mm', 'a4');
-        const imgWidth = 210;
-        const pageHeight = 297;
+        
+        // Centrer le QR code sur la page
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = 80; // Taille du QR code en mm
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
-        let heightLeft = imgHeight;
         
-        let position = 0;
+        // Centrer horizontalement et verticalement
+        const x = (pageWidth - imgWidth) / 2;
+        const y = (pageHeight - imgHeight) / 2;
         
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
+        pdf.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
+        pdf.save('qr-code-badge.pdf');
         
-        while (heightLeft >= 0) {
-            position = heightLeft - imgHeight;
-            pdf.addPage();
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-        }
-        
-        pdf.save('badge-etudiant.pdf');
         button.innerHTML = originalText;
         button.disabled = false;
-        alert('Badge téléchargé avec succès !');
+        alert('QR Code téléchargé avec succès !');
     }).catch(error => {
         console.error('Erreur lors de la génération du PDF:', error);
-        createSimplePDF();
+        alert('Erreur lors de la génération du PDF');
         button.innerHTML = originalText;
         button.disabled = false;
     });
 }
 
-// Fonction de fallback pour créer un PDF simple
-function createSimplePDF() {
-    const studentName = document.querySelector('h2')?.textContent || 'Yassine Ben Amor';
-    const studentNumber = document.querySelector('.text-gray-600')?.textContent || 'N° étudiant : 21JGLU1234';
-    const validity = document.querySelector('.bg-\\[\\#C90C0F\\]')?.textContent || 'Valable jusqu\'au 31/01/2026';
-    const meals = document.querySelector('.text-\\[\\#C90C0F\\]')?.textContent || '112 repas restants ce semestre';
-    
-    // Créer un PDF simple avec les données textuelles
-    const pdfContent = `
-BADGE ÉTUDIANT - RESTAURANT UNIVERSITAIRE ESPRIT
-
-${studentName}
-${studentNumber}
-
-${validity}
-${meals}
-
-Présente ce badge à l'entrée du resto universitaire ESPRIT.
-Mis à jour automatiquement.
-    `;
-    
-    // Créer un blob et télécharger
-    const blob = new Blob([pdfContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'badge-etudiant.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    
-    alert('Le badge a été téléchargé. Note: Pour un PDF complet avec QR code, veuillez utiliser la fonction "Afficher en plein écran" puis imprimer depuis le navigateur.');
-}
 
 // Initialisation quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', function() {
