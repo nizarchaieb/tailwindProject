@@ -95,13 +95,13 @@
 
                 <!-- Action Buttons -->
                 <div class="space-y-4 mb-6">
-                    <button class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors flex items-center justify-center space-x-2">
+                    <button id="fullscreenBtn" class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors flex items-center justify-center space-x-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
                         </svg>
                         <span>Afficher en plein écran</span>
                     </button>
-                    <button class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors flex items-center justify-center space-x-2">
+                    <button id="downloadBtn" class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors flex items-center justify-center space-x-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
@@ -183,6 +183,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 

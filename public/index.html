@@ -68,7 +68,7 @@
             <p class="text-gray-600 text-center mb-8">Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe</p>
 
             <!-- Form -->
-            <form class="space-y-6">
+            <form id="resetForm" class="space-y-6">
                 <div>
                     <label class="block text-gray-700 font-medium mb-2">Adresse email</label>
                     <div class="relative">
@@ -79,6 +79,8 @@
                         </div>
                         <input 
                             type="email" 
+                            id="resetEmail"
+                            required
                             class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent" 
                             placeholder="exemple@universite.fr">
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -183,6 +185,7 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
 
