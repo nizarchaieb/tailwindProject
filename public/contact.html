@@ -9,45 +9,57 @@
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <!-- RestoFlow Logo -->
-                <img src="logo.png" alt="RestoFlow Logo" class="h-12 w-auto">
-                <div class="flex flex-col">
-                    <span class="text-red-600 text-2xl font-bold">RestoFlow</span>
-                    <span class="text-black text-sm">Restaurant Universitaire esprit</span>
-                </div>
-            </a>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-red-600">Accueil</a>
-                <a href="contact.html" class="text-red-600 font-semibold">Contact</a>
-                <a href="badge.html" class="text-gray-700 hover:text-red-600">Mon Badge</a>
-                <a href="#" class="text-gray-700 hover:text-red-600">Menus</a>
-                <a href="#" class="text-gray-700 hover:text-red-600">Horaires</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="badge.html" class="text-gray-700 hover:text-red-600 text-sm font-medium">Badge</a>
-                <a href="index.html" class="text-gray-700 hover:text-red-600 text-sm font-medium">Réinitialisation</a>
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
-                        </svg>
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2 sm:space-x-3">
+                    <!-- RestoFlow Logo -->
+                    <img src="logo.png" alt="RestoFlow Logo" class="h-10 sm:h-12 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-red-600 text-xl sm:text-2xl font-bold">RestoFlow</span>
+                        <span class="text-black text-xs sm:text-sm">Restaurant Universitaire esprit</span>
                     </div>
-                    <span class="text-gray-700">Yassine Ben Amor</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-red-600">Accueil</a>
+                    <a href="contact.html" class="text-red-600 font-semibold">Contact</a>
+                    <a href="badge.html" class="text-gray-700 hover:text-red-600">Mon Badge</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600">Menus</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600">Horaires</a>
+                </nav>
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="badge.html" class="hidden sm:inline-block text-gray-700 hover:text-red-600 text-sm font-medium">Badge</a>
+                    <a href="index.html" class="hidden sm:inline-block text-gray-700 hover:text-red-600 text-sm font-medium">Réinitialisation</a>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="hidden sm:inline-block text-gray-700">Yassine Ben Amor</span>
+                    </div>
                 </div>
             </div>
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden mt-4 pt-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 hover:text-red-600 py-2">Accueil</a>
+                    <a href="contact.html" class="text-red-600 font-semibold py-2">Contact</a>
+                    <a href="badge.html" class="text-gray-700 hover:text-red-600 py-2">Mon Badge</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 py-2">Menus</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 py-2">Horaires</a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-4 py-8 sm:py-12">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold text-black mb-4 text-center">Besoin d'aide ?</h1>
-            <p class="text-gray-600 text-lg mb-8 text-center">On répond en moins de 5 minutes pendant les heures d'ouverture du resto</p>
+            <h1 class="text-3xl sm:text-4xl font-bold text-black mb-4 text-center">Besoin d'aide ?</h1>
+            <p class="text-gray-600 text-base sm:text-lg mb-8 text-center">On répond en moins de 5 minutes pendant les heures d'ouverture du resto</p>
 
             <!-- Contact Options -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 <!-- WhatsApp -->
                 <div class="bg-red-600 rounded-lg p-6 text-center text-white">
                     <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -78,12 +90,12 @@
                         </svg>
                     </div>
                     <p class="font-semibold mb-1">Email</p>
-                    <p class="text-sm">contact@restoflow.esprit.tn</p>
+                    <p class="text-sm break-words">contact@restoflow.esprit.tn</p>
                 </div>
-            </div>
+            </section>
 
             <!-- Contact Form -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <section class="bg-white rounded-lg shadow-md p-6 sm:p-8 mb-6 sm:mb-8">
                 <h2 class="text-2xl font-semibold text-black mb-6">Ou envoie-nous un message</h2>
                 <form class="space-y-6">
                     <div>
@@ -103,26 +115,26 @@
                     </div>
                     <button 
                         type="submit" 
-                        class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                        class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors">
                         Envoyer le message
                     </button>
                 </form>
-            </div>
+            </section>
 
             <!-- Location and Hours -->
-            <div class="bg-gray-100 rounded-lg p-6">
+            <section class="bg-gray-100 rounded-lg p-4 sm:p-6">
                 <p class="text-gray-800 font-medium mb-2">Resto U ESPRIT - Bâtiment A, rez-de-chaussée</p>
-                <p class="text-gray-600">Horaires : 11h30-14h30 et 18h30-21h30 (sauf week-end)</p>
-            </div>
+                <p class="text-gray-600 text-sm sm:text-base">Horaires : 11h30-14h30 et 18h30-21h30 (sauf week-end)</p>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-16">
         <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Restaurant Info -->
-                <div>
+                <section>
                     <h3 class="text-xl font-semibold mb-4">Restaurant Universitaire esprit</h3>
                     <p class="text-gray-400 mb-4">Votre restaurant universitaire moderne offre une expérience culinaire de qualité dans un environnement convivial et accueillant.</p>
                     <div class="flex space-x-4">
@@ -142,10 +154,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Navigation -->
-                <div>
+                <nav>
                     <h3 class="text-xl font-semibold mb-4">Navigation</h3>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-white">Accueil</a></li>
@@ -155,10 +167,10 @@
                         <li><a href="#" class="text-gray-400 hover:text-white">Réservations</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white">Horaires</a></li>
                     </ul>
-                </div>
+                </nav>
 
                 <!-- Contact -->
-                <div>
+                <section>
                     <h3 class="text-xl font-semibold mb-4">Contact</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center space-x-2">
@@ -181,7 +193,7 @@
                             <span class="text-gray-400">contact@resto.tn</span>
                         </li>
                     </ul>
-                </div>
+                </section>
             </div>
         </div>
     </footer>

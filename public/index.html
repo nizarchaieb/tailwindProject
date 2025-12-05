@@ -8,40 +8,52 @@
 </head>
 <body class="bg-blue-600 min-h-screen relative overflow-hidden">
     <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 bg-cover bg-center filter blur-sm brightness-50" style="background-image: url('background.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center filter blur-sm brightness-50 bg-[url('background.png')]"></div>
     <div class="absolute inset-0 bg-red-600 opacity-30"></div>
 
     <!-- Header -->
     <header class="relative z-10 bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <!-- RestoFlow Logo -->
-                <img src="logo.png" alt="RestoFlow Logo" class="h-12 w-auto">
-                <div class="flex flex-col">
-                    <span class="text-red-600 text-2xl font-bold">RestoFlow</span>
-                    <span class="text-black text-sm">Restaurant Universitaire esprit</span>
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2 sm:space-x-3">
+                    <!-- RestoFlow Logo -->
+                    <img src="logo.png" alt="RestoFlow Logo" class="h-10 sm:h-12 w-auto">
+                    <div class="flex flex-col">
+                        <span class="text-red-600 text-xl sm:text-2xl font-bold">RestoFlow</span>
+                        <span class="text-black text-xs sm:text-sm">Restaurant Universitaire esprit</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                    <a href="index.html" class="text-red-600 font-semibold">Accueil</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-red-600">Contact</a>
+                    <a href="badge.html" class="text-gray-700 hover:text-red-600">Mon Badge</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600">Menus</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600">Horaires</a>
+                </nav>
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="contact.html" class="hidden sm:inline-block text-gray-700 hover:text-red-600 text-sm font-medium">Contact</a>
+                    <a href="badge.html" class="hidden sm:inline-block text-gray-700 hover:text-red-600 text-sm font-medium">Badge</a>
+                    <button class="bg-[#C90C0F] text-white px-4 sm:px-6 py-2 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors text-sm sm:text-base">
+                        Sign In
+                    </button>
                 </div>
-            </a>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-red-600 font-semibold">Accueil</a>
-                <a href="contact.html" class="text-gray-700 hover:text-red-600">Contact</a>
-                <a href="badge.html" class="text-gray-700 hover:text-red-600">Mon Badge</a>
-                <a href="#" class="text-gray-700 hover:text-red-600">Menus</a>
-                <a href="#" class="text-gray-700 hover:text-red-600">Horaires</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="contact.html" class="text-gray-700 hover:text-red-600 text-sm font-medium">Contact</a>
-                <a href="badge.html" class="text-gray-700 hover:text-red-600 text-sm font-medium">Badge</a>
-                <button class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-                    Sign In
-                </button>
             </div>
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden mt-4 pt-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-red-600 font-semibold py-2">Accueil</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-red-600 py-2">Contact</a>
+                    <a href="badge.html" class="text-gray-700 hover:text-red-600 py-2">Mon Badge</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 py-2">Menus</a>
+                    <a href="#" class="text-gray-700 hover:text-red-600 py-2">Horaires</a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Main Content with Modal -->
-    <main class="relative z-10 flex items-center justify-center min-h-[calc(100vh-80px)] px-4 py-12">
-        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full">
+    <main class="relative z-10 flex items-center justify-center min-h-[calc(100vh-80px)] px-4 py-8 sm:py-12">
+        <section class="bg-white rounded-lg shadow-2xl p-6 sm:p-8 max-w-md w-full">
             <!-- Icon -->
             <div class="flex justify-center mb-6">
                 <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
@@ -79,7 +91,7 @@
 
                 <button 
                     type="submit" 
-                    class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                    class="w-full bg-[#C90C0F] text-white py-3 rounded-lg font-semibold hover:bg-[#A00A0C] transition-colors">
                     Envoyer le lien
                 </button>
             </form>
@@ -100,15 +112,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="relative z-10 bg-gray-800 text-white mt-16">
         <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Restaurant Info -->
-                <div>
+                <section>
                     <h3 class="text-xl font-semibold mb-4">Restaurant Universitaire esprit</h3>
                     <p class="text-gray-400 mb-4">Votre restaurant universitaire moderne offre une expérience culinaire de qualité dans un environnement convivial et accueillant.</p>
                     <div class="flex space-x-4">
@@ -128,10 +140,10 @@
                             </svg>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Navigation -->
-                <div>
+                <nav>
                     <h3 class="text-xl font-semibold mb-4">Navigation</h3>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="text-gray-400 hover:text-white">Réinitialisation</a></li>
@@ -141,10 +153,10 @@
                         <li><a href="#" class="text-gray-400 hover:text-white">Réservations</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white">Horaires</a></li>
                     </ul>
-                </div>
+                </nav>
 
                 <!-- Contact -->
-                <div>
+                <section>
                     <h3 class="text-xl font-semibold mb-4">Contact</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center space-x-2">
@@ -167,7 +179,7 @@
                             <span class="text-gray-400">contact@resto.tn</span>
                         </li>
                     </ul>
-                </div>
+                </section>
             </div>
         </div>
     </footer>
